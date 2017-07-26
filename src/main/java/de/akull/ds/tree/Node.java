@@ -1,12 +1,13 @@
 package de.akull.ds.tree;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 public class Node<T> {
 
-    public T data;
-    public Node left;
-    public Node right;
-
-    public Node(T data) {
-        this.data = data;
-    }
+    private T data;
+    private Node left;
+    private Node right;
 }

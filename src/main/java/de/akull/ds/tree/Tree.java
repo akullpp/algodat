@@ -1,43 +1,30 @@
 package de.akull.ds.tree;
 
+import java.util.List;
+
 public class Tree {
 
-    public static void visit(Node n) {
-        System.out.println(n.data);
-    }
-
-    public static void traverseInOrder(Node n) {
+    static void traverseInOrder(Node n, List<Object> acc) {
         if (n != null) {
-            traverseInOrder(n.left);
-            visit(n);
-            traverseInOrder(n.right);
+            traverseInOrder(n.getLeft(), acc);
+            acc.add(n.getData());
+            traverseInOrder(n.getRight(), acc);
         }
     }
 
-    public static void traversePreOrder(Node n) {
+    static void traversePreOrder(Node n, List<Object> acc) {
         if (n != null) {
-            visit(n);
-            traverseInOrder(n.left);
-            traverseInOrder(n.right);
+            acc.add(n.getData());
+            traversePreOrder(n.getLeft(), acc);
+            traversePreOrder(n.getRight(), acc);
         }
     }
 
-    public static void traversePostOrder(Node n) {
+    static void traversePostOrder(Node n, List<Object> acc) {
         if (n != null) {
-            traverseInOrder(n.left);
-            traverseInOrder(n.right);
-            visit(n);
+            traversePostOrder(n.getLeft(), acc);
+            traversePostOrder(n.getRight(), acc);
+            acc.add(n.getData());
         }
-    }
-
-    public static void main(String[] args) {
-        Node root = new Node<>(256);
-        Node left = new Node<>(128);
-        Node leftleft = new Node<>(64);
-        root.left = left;
-        left.left = leftleft;
-        root.right = new Node<>(512);
-
-        traversePostOrder(root);
     }
 }
