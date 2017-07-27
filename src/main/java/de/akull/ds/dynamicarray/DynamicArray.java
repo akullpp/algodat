@@ -1,21 +1,17 @@
 package de.akull.ds.dynamicarray;
 
+import lombok.Getter;
+
+import java.util.Arrays;
+
+@Getter
 public class DynamicArray<T> {
-
-    public int capacity = 2;
-
-    public int size = 0;
-
-    public Object[] array = new Object[capacity];
-
+    private int capacity = 3;
+    private int size = 0;
+    private Object[] array = new Object[capacity];
 
     public void add(T t) {
-        if (size == capacity) {
-            capacity *= 2;
-            Object[] newArray = new Object[capacity];
-            System.arraycopy(array, 0, newArray, 0, array.length);
-            array = newArray;
-        }
+        if (size == capacity) array = Arrays.copyOf(array, capacity *= 2);
         array[size++] = t;
     }
 }
