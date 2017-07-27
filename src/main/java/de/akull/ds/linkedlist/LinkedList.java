@@ -31,7 +31,7 @@ public class LinkedList {
 
     // O(1)
     public void insertAfter(Node node, Node newNode) {
-        if (node.next.equals(tail)) {
+        if (node.equals(tail)) {
             tail = newNode;
         }
         newNode.next = node.next;

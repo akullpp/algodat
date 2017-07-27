@@ -31,9 +31,9 @@ public class TreeTest {
         n1.right = n4;
 
         n0 = new Node();
-        n1.data = "0";
-        n1.left = n1;
-        n1.right = n2;
+        n0.data = "0";
+        n0.left = n1;
+        n0.right = n2;
     }
 
     @Test

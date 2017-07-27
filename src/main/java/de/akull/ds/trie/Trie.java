@@ -7,7 +7,7 @@ public class Trie {
     public void insert(String s) {
         Node current = root;
         for (char c : s.toCharArray()) {
-            current = current.children.putIfAbsent(c, new Node());
+            current.children.putIfAbsent(c, new Node());
             current = current.children.get(c);
         }
         current.isWord = true;
