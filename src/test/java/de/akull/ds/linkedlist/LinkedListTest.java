@@ -1,7 +1,5 @@
 package de.akull.ds.linkedlist;
 
-import de.akull.ds.linkedlist.LinkedList;
-import de.akull.ds.linkedlist.Node;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,6 +8,7 @@ import org.junit.runners.JUnit4;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(JUnit4.class)
+@SuppressWarnings("Duplicates")
 public class LinkedListTest {
 
     private LinkedList linkedList;
@@ -35,7 +34,7 @@ public class LinkedListTest {
         linkedList.append(n5);
         linkedList.append(n6);
 
-        assertThat(linkedList.size).isEqualTo(3);
+        assertThat(linkedList.size).isEqualTo(6);
         assertThat(linkedList.head).isEqualTo(n1);
         assertThat(linkedList.tail).isEqualTo(n6);
 
@@ -120,16 +119,16 @@ public class LinkedListTest {
 
     @Test
     public void Should_Insert_After_Inbetween() {
-        Node n4 = new Node("D");
+        Node n4 = new Node<>("D");
 
         linkedList.append(n1);
         linkedList.append(n2);
         linkedList.append(n4);
         linkedList.insertAfter(n2, n3);
 
-        assertThat(linkedList.size).isEqualTo(3);
+        assertThat(linkedList.size).isEqualTo(4);
         assertThat(linkedList.head).isEqualTo(n1);
-        assertThat(linkedList.tail).isEqualTo(n3);
+        assertThat(linkedList.tail).isEqualTo(n4);
 
         assertThat(linkedList.get(3)).isEqualTo(n4);
         assertThat(linkedList.get(2)).isEqualTo(n3);
