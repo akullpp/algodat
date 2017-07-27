@@ -12,10 +12,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(JUnit4.class)
 public class LinkedListTest {
 
-    LinkedList linkedList;
-    Node n1 = new Node<>("A");
-    Node n2 = new Node<>("B");
-    Node n3 = new Node<>("C");
+    private LinkedList linkedList;
+    private Node n1 = new Node<>("A");
+    private Node n2 = new Node<>("B");
+    private Node n3 = new Node<>("C");
 
     @Before
     public void setup() {

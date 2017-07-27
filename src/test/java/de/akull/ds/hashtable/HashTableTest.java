@@ -34,7 +34,7 @@ public class HashTableTest {
         hashTable.put("I", 9);
         hashTable.put("J", 10);
 
-        assertThat(hashTable.getCapacity()).isEqualTo(20);
+        assertThat(hashTable.capacity).isEqualTo(20);
     }
 
     @Test

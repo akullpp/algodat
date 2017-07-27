@@ -1,32 +1,29 @@
 package de.akull.ds.trie;
 
-import lombok.Data;
-
-@Data
+@SuppressWarnings("WeakerAccess")
 public class Trie {
-    private Node root = new Node();
+    public Node root = new Node();
 
-    void insert(String s) {
+    public void insert(String s) {
         Node current = root;
-
         for (char c : s.toCharArray()) {
-            current = current.getChildren().putIfAbsent(c, new Node());
-            current = current.getChildren().get(c);
+            current = current.children.putIfAbsent(c, new Node());
+            current = current.children.get(c);
         }
-        current.setWord(true);
+        current.isWord = true;
     }
 
-    boolean isWord(String s) {
+    public boolean isWord(String s) {
         Node current = root;
 
         for (char c : s.toCharArray()) {
-            current = current.getChildren().get(c);
+            current = current.children.get(c);
 
             if (current == null) {
                 return false;
             }
         }
-        return current.isWord();
+        return current.isWord;
     }
 }
 

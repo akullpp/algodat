@@ -1,19 +1,17 @@
 package de.akull.ds.dynamicarray;
 
-import lombok.Getter;
-
 import java.util.Arrays;
 
-@Getter
-class DynamicArray<T> {
+@SuppressWarnings("WeakerAccess")
+public class DynamicArray<T> {
 
-    private static final int INCREASE_FACTOR = 2;
+    public static final int INCREASE_FACTOR = 2;
 
-    private int capacity = 7;
-    private int size = 0;
-    private Object[] array = new Object[capacity];
+    public int capacity = 3;
+    public int size = 0;
+    public Object[] array = new Object[capacity];
 
-    void add(T t) {
+    public void add(T t) {
         if (size == capacity) {
             array = Arrays.copyOf(array, capacity *= INCREASE_FACTOR);
         }

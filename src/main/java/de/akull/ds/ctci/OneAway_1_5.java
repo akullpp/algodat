@@ -1,6 +1,5 @@
 package de.akull.ds.ctci;
 
-import java.util.Collections;
 import java.util.HashSet;
 
 public class OneAway_1_5 {

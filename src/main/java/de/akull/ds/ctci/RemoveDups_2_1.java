@@ -11,11 +11,11 @@ public class RemoveDups_2_1 {
         ArrayList<Integer> buffer = new ArrayList<>();
         Node prev = linkedList.head;
         Node current = linkedList.head;
-        while(current.next != null) {
-            if (buffer.contains((Integer)current.data)) {
+        while (current.next != null) {
+            if (buffer.contains((Integer) current.data)) {
                 linkedList.removeAfter(prev);
             } else {
-                buffer.add((Integer)current.data);
+                buffer.add((Integer) current.data);
             }
             prev = current;
             current = current.next;
@@ -24,7 +24,7 @@ public class RemoveDups_2_1 {
 
     public static void withoutBuffer(LinkedList linkedList) {
         Node current = linkedList.head;
-        while(current.next != null) {
+        while (current.next != null) {
             Node runner = current;
 
             while (runner.next != null) {

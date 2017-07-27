@@ -1,11 +1,10 @@
 package de.akull.ds.trie;
 
-import lombok.Data;
-
 import java.util.HashMap;
 
-@Data
+@SuppressWarnings("WeakerAccess")
 public class Node {
-    private HashMap<Character, Node> children = new HashMap<>();
-    private boolean isWord;
+
+    public HashMap<Character, Node> children = new HashMap<>();
+    public boolean isWord;
 }
