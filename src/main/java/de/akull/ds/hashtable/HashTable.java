@@ -1,47 +1,76 @@
 package de.akull.ds.hashtable;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
+import lombok.Getter;
 
-public class HashTable<K, V> {
+@SuppressWarnings("unchecked")
+class HashTable<K, V> {
 
-    public int capacity = 16;
-    public LinkedList[] buckets = new LinkedList[capacity];
+    private static final int INCREASE_FACTOR = 2;
+    private static final int HASH_FACTOR = 31;
+    private static final double LOAD_FACTOR = 0.75;
 
-    public int hash(String key) {
+    @Getter
+    private int capacity = 10;
+
+    private int size = 0;
+    private LinkedList<K, V>[] buckets = new LinkedList[capacity];
+
+    private int hash(String key) {
         int hash = 0;
         // O(N)
         char[] chars = key.toCharArray();
 
         // O(N)
         for (char c : chars) {
-            hash = 31 * hash + c;
+            hash = HASH_FACTOR * hash + c;
         }
         return hash;
     }
 
-    // O(1)
-    public void put(K key, V value) {
-        if (Math.floor(capacity * 0.75) >= buckets.length + 1) {
-            LinkedList[] newBuckets = new LinkedList[capacity * 2];
-            capacity *= 2;
+    private void ensureCapacity() {
+        if (size >= Math.floor(capacity * LOAD_FACTOR)) {
+            size = 0;
+            LinkedList<K, V>[] tmp = buckets;
+            buckets = new LinkedList[capacity *= INCREASE_FACTOR];
 
-            for (LinkedList bucket : buckets) {
-                
+            for (LinkedList<K, V> bucket : tmp) {
+                if (bucket != null) {
+                    Node<K, V> current = bucket.getHead();
+                    while (current != null) {
+                        put(current.getKey(), current.getValue());
+                        current = current.getNext();
+                    }
+                }
             }
         }
-        int index = Math.abs(hash(key.toString()) % buckets.length);
-
-        if (buckets[index] == null) {
-            buckets[index] = new LinkedList();
-        }
-        buckets[index].append(new Node<>(key, value));
     }
 
-    public static void main(String[] args) {
-        HashTable<String, Integer> hashTable = new HashTable<>();
-        hashTable.put("Siblings", 1);
-        hashTable.put("Teheran", 2);
+    private int computeIndex(K key) {
+        return Math.abs(hash(key.toString()) % buckets.length);
+    }
+
+    // O(1)
+    void put(K key, V value) {
+        ensureCapacity();
+
+        int index = computeIndex(key);
+        if (buckets[index] == null) {
+            buckets[index] = new LinkedList<>();
+        }
+        buckets[index].append(new Node<>(key, value));
+        size++;
+    }
+
+    V get(K key) {
+        int index = computeIndex(key);
+
+        Node<K, V> current = buckets[index].getHead();
+        while (current != null) {
+            if (current.getKey().equals(key)) {
+                return current.getValue();
+            }
+            current = current.getNext();
+        }
+        return null;
     }
 }

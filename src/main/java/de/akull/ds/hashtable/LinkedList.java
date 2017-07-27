@@ -1,32 +1,32 @@
 package de.akull.ds.hashtable;
 
-public class LinkedList {
 
-    public Node head;
+import lombok.Getter;
 
-    public Node tail;
+class LinkedList<K, V> {
 
-    public int size;
+    @Getter
+    private Node<K, V> head;
+
+    private Node<K, V> tail;
 
     // O(1)
-    public void prepend(Node n) {
-        n.next = head;
+    private void prepend(Node<K, V> n) {
+        n.setNext(head);
         head = n;
 
         if (tail == null) {
             tail = head;
         }
-        size++;
     }
 
     // O(1)
-    public void append(Node n) {
+    void append(Node<K, V> n) {
         if (head == null) {
             prepend(n);
         } else {
-            tail.next = n;
+            tail.setNext(n);
             tail = n;
-            size++;
         }
     }
 }

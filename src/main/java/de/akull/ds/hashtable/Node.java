@@ -1,12 +1,15 @@
 package de.akull.ds.hashtable;
 
+import lombok.Data;
+
+@Data
 public class Node<K, V> {
 
-    public Node next;
+    private Node<K, V> next;
 
-    public K key;
+    private K key;
 
-    public V value;
+    private V value;
 
     public Node(K key, V value) {
         this.key = key;
