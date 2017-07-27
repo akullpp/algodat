@@ -1,4 +1,4 @@
-package de.akull.ds.ctci;
+package de.akull.ctci;
 
 public class RotateMatrix_1_7 {
 

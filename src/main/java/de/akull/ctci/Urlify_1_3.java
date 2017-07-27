@@ -1,4 +1,4 @@
-package de.akull.ds.ctci;
+package de.akull.ctci;
 
 public class Urlify_1_3 {
 
