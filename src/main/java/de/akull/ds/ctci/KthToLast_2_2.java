@@ -3,9 +3,6 @@ package de.akull.ds.ctci;
 import de.akull.ds.linkedlist.LinkedList;
 import de.akull.ds.linkedlist.Node;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class KthToLast_2_2 {
 
     public static Node findKthToLast(LinkedList linkedList, int k) {
@@ -16,10 +13,6 @@ public class KthToLast_2_2 {
             n = n.next;
         }
         return n;
-    }
-
-    public static class Index {
-        public int counter;
     }
 
     public static Node realKthToLast(LinkedList linkedList, int k) {
@@ -49,5 +42,9 @@ public class KthToLast_2_2 {
         linkedList.append(new Node<>(5));
 
         realKthToLast(linkedList, 3);
+    }
+
+    public static class Index {
+        public int counter;
     }
 }

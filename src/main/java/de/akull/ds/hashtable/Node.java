@@ -1,15 +1,13 @@
 package de.akull.ds.hashtable;
 
-import lombok.Data;
-
-@Data
+@SuppressWarnings("WeakerAccess")
 public class Node<K, V> {
 
-    private Node<K, V> next;
+    public Node<K, V> next;
 
-    private K key;
+    public K key;
 
-    private V value;
+    public V value;
 
     public Node(K key, V value) {
         this.key = key;

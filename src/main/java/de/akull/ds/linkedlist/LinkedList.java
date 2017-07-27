@@ -1,11 +1,10 @@
 package de.akull.ds.linkedlist;
 
+@SuppressWarnings("WeakerAccess")
 public class LinkedList {
 
     public Node head;
-
     public Node tail;
-
     public int size;
 
     // O(1)
@@ -52,7 +51,7 @@ public class LinkedList {
     }
 
     // O(1)
-    public void removeHead() {
+    void removeHead() {
         if (head != null) {
             head = head.next;
             size--;

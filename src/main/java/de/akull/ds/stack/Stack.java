@@ -2,9 +2,10 @@ package de.akull.ds.stack;
 
 import java.util.EmptyStackException;
 
+@SuppressWarnings("WeakerAccess")
 public class Stack {
 
-    private Node head;
+    public Node head;
 
     public void push(Node n) {
         n.next = head;

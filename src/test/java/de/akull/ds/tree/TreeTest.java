@@ -18,21 +18,22 @@ public class TreeTest {
     @Before
     public void setup() {
         // Leaf nodes
-        Node n2 = Node.builder().data("2").build();
-        Node n3 = Node.builder().data("3").build();
-        Node n4 = Node.builder().data("4").build();
+        Node n2 = new Node();
+        n2.data = "2";
+        Node n3 = new Node();
+        n3.data = "3";
+        Node n4 = new Node();
+        n4.data = "4";
 
-        Node n1 = Node.builder()
-                .data("1")
-                .left(n3)
-                .right(n4)
-                .build();
+        Node n1 = new Node();
+        n1.data = "1";
+        n1.left = n3;
+        n1.right = n4;
 
-        n0 = Node.builder()
-                .data("0")
-                .left(n1)
-                .right(n2)
-                .build();
+        n0 = new Node();
+        n1.data = "0";
+        n1.left = n1;
+        n1.right = n2;
     }
 
     @Test

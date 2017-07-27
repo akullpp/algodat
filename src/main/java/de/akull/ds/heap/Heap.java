@@ -2,11 +2,12 @@ package de.akull.ds.heap;
 
 import java.util.Arrays;
 
+@SuppressWarnings("WeakerAccess")
 public class Heap {
 
-    private int capacity = 10;
-    private int size = 0;
-    private int[] items = new int[capacity];
+    public int capacity = 10;
+    public int size = 0;
+    public int[] items = new int[capacity];
 
     public boolean hasLeftChild(int i) {
         return getLeftChildIndex(i) < size;
@@ -40,7 +41,7 @@ public class Heap {
         return items[getParentIndex(i)];
     }
 
-    private void swap(int i, int j) {
+    public void swap(int i, int j) {
         int tmp = items[i];
         items[i] = items[j];
         items[j] = items[tmp];

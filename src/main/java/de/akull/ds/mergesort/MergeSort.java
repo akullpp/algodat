@@ -1,14 +1,23 @@
 package de.akull.ds.mergesort;
 
+@SuppressWarnings("WeakerAccess")
 public class MergeSort {
 
-    private int[] xs;
-    private int[] buffer;
+    public int[] xs;
+    public int[] buffer;
 
     public MergeSort(int[] xs) {
         this.xs = xs;
         this.buffer = new int[xs.length];
         sort(0, xs.length - 1);
+    }
+
+    public static void main(String[] args) {
+        MergeSort ms = new MergeSort(new int[]{2, 5, 6, 9, 1, 4, 2, 40, 3});
+
+        for (int i : ms.xs) {
+            System.out.print(String.format("${}", i));
+        }
     }
 
     public void sort(int low, int high) {
@@ -44,14 +53,6 @@ public class MergeSort {
             xs[k] = buffer[i];
             k++;
             i++;
-        }
-    }
-
-    public static void main(String[] args) {
-        MergeSort ms = new MergeSort(new int[]{2, 5, 6, 9, 1, 4, 2, 40, 3});
-
-        for (int i : ms.xs) {
-            System.out.print(String.format("${}", i));
         }
     }
 }

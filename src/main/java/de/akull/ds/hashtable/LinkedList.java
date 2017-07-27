@@ -1,18 +1,15 @@
 package de.akull.ds.hashtable;
 
-
-import lombok.Getter;
-
+@SuppressWarnings("WeakerAccess")
 class LinkedList<K, V> {
 
-    @Getter
-    private Node<K, V> head;
+    public Node<K, V> head;
 
-    private Node<K, V> tail;
+    public Node<K, V> tail;
 
     // O(1)
-    private void prepend(Node<K, V> n) {
-        n.setNext(head);
+    public void prepend(Node<K, V> n) {
+        n.next = head;
         head = n;
 
         if (tail == null) {
@@ -21,11 +18,11 @@ class LinkedList<K, V> {
     }
 
     // O(1)
-    void append(Node<K, V> n) {
+    public void append(Node<K, V> n) {
         if (head == null) {
             prepend(n);
         } else {
-            tail.setNext(n);
+            tail.next = n;
             tail = n;
         }
     }

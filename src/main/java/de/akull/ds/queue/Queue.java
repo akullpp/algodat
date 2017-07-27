@@ -2,10 +2,11 @@ package de.akull.ds.queue;
 
 import java.util.EmptyStackException;
 
+@SuppressWarnings("WeakerAccess")
 public class Queue {
 
-    private Node head;
-    private Node tail;
+    public Node head;
+    public Node tail;
 
     public void add(Node n) {
         if (tail != null) {
