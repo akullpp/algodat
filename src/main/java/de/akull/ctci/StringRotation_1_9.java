@@ -1,4 +1,4 @@
-package de.akull.ds.ctci;
+package de.akull.ctci;
 
 public class StringRotation_1_9 {
 

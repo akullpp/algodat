@@ -1,4 +1,4 @@
-package de.akull.ds.ctci;
+package de.akull.ctci;
 
 import de.akull.ds.linkedlist.LinkedList;
 import de.akull.ds.linkedlist.Node;
