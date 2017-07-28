@@ -1,7 +1,7 @@
 package de.akull.ctci;
 
-import de.akull.ds.linkedlist.LinkedList;
-import de.akull.ds.linkedlist.Node;
+import de.akull.datastructures.linkedlist.LinkedList;
+import de.akull.datastructures.linkedlist.Node;
 
 public class KthToLast_2_2 {
 
