@@ -1,4 +1,4 @@
-package de.akull.algorithms.mergesort;
+package de.akull.algorithms;
 
 @SuppressWarnings("WeakerAccess")
 public class MergeSort {
