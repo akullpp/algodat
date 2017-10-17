@@ -3,40 +3,25 @@ package de.akull.algorithms;
 @SuppressWarnings("WeakerAccess")
 public class MergeSort {
 
-    public int[] xs;
-    public int[] buffer;
+    public static void sort(int[] xs) {
+        sort(xs, new int[xs.length], 0, xs.length - 1);
+    };
 
-    public MergeSort(int[] xs) {
-        this.xs = xs;
-        this.buffer = new int[xs.length];
-        sort(0, xs.length - 1);
-    }
-
-    public static void main(String[] args) {
-        MergeSort ms = new MergeSort(new int[]{2, 5, 6, 9, 1, 4, 2, 40, 3});
-
-        for (int i : ms.xs) {
-            System.out.print(String.format("${}", i));
-        }
-    }
-
-    public void sort(int low, int high) {
+    public static void sort(int[] xs, int[] buffer, int low, int high) {
         if (low == high) {
             return;
         }
-        int mid = low + (high - low) / 2;
-        sort(low, mid);
-        sort(mid + 1, high);
-        merge(low, mid + 1, high);
+        int mid = (low + high) / 2;
+        sort(xs, buffer, low, mid);
+        sort(xs, buffer, mid + 1, high);
+        merge(xs, buffer, low, mid, high);
     }
 
-    public void merge(int low, int mid, int high) {
-        for (int i = low; i <= high; i++) {
-            buffer[i] = xs[i];
-        }
+    public static void merge(int[] xs, int[] buffer, int low, int mid, int high) {
+        System.arraycopy(xs, low, buffer, low, high + 1 - low);
 
         int i = low;
-        int j = mid;
+        int j = mid + 1;
         int k = low;
 
         while (i <= mid && j <= high) {
