@@ -3,9 +3,9 @@ package de.akull.algorithms;
 import de.akull.datastructures.graph.Graph;
 import de.akull.datastructures.graph.Node;
 
-public class Datastructures {
+class Datastructures {
 
-    public static Graph graph() {
+    static Graph graph() {
         Graph graph = new Graph();
         Node n0 = new Node(0);
         Node n1 = new Node(1);

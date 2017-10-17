@@ -5,6 +5,7 @@ import de.akull.datastructures.graph.Node;
 import java.util.HashSet;
 import java.util.LinkedList;
 
+@SuppressWarnings("WeakerAccess")
 public class BreadthFirstSearch {
 
     public static boolean hasPath(Node source, Node destination) {

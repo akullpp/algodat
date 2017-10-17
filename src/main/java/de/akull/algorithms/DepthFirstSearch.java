@@ -4,6 +4,7 @@ import de.akull.datastructures.graph.Node;
 
 import java.util.HashSet;
 
+@SuppressWarnings("WeakerAccess")
 public class DepthFirstSearch {
 
     public static boolean hasPath(Node source, Node destination) {

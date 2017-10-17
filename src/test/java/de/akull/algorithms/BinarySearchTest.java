@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class BinarySearchTest {
 
-    private final int[] SEARCH_SPACE = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private final int[] SEARCH_SPACE = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     @Test
     public void Should_Find_Element_If_Present() {
