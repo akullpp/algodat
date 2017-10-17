@@ -1,7 +1,7 @@
 package de.akull.algorithms;
 
 @SuppressWarnings("WeakerAccess")
-public class QuickSort {
+public class Quicksort {
 
     public static void quicksort(int[] xs) {
         quicksort(xs, 0, xs.length - 1);
