@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class StringCompression_1_6 {
 
-    private static String compress(String s) {
+    public static String compress(String s) {
         StringBuilder compressedString = new StringBuilder();
         HashMap<Character, Integer> counts = new HashMap<>();
 
