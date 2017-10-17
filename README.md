@@ -22,7 +22,3 @@ Everything's public access for simpler testing.
 * Depth First Search
 * Merge sort
 * Quicksort
-
-# Cracking The Code Interview
-
-Answers to the 6th Edition.
