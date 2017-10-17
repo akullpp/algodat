@@ -43,7 +43,7 @@ public class Heap {
         items[j] = tmp;
     }
 
-    private void checkCapacity() {
+    public void checkCapacity() {
         if (size == capacity) {
             capacity *= 2;
             items = Arrays.copyOf(items, capacity);

@@ -12,7 +12,7 @@ public class DepthFirstSearch {
         return hasPath(source, destination, visited);
     }
 
-    private static boolean hasPath(Node s, Node d, HashSet<Integer> visited) {
+    public static boolean hasPath(Node s, Node d, HashSet<Integer> visited) {
         if (visited.contains(s.id)) {
             return false;
         }
