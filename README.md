@@ -9,6 +9,7 @@ Collection of basic datastructures implemented in Java.
 * Heap
 * Linked list
 * Queue
+* Rope
 * Stack
 * Tree
 * Trie

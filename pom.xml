@@ -6,25 +6,30 @@
 
     <groupId>de.akull</groupId>
     <artifactId>algodat</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <junit.version>4.12</junit.version>
+        <assertj.version>3.11.1</assertj.version>
+        <plugins.version>3.8.0</plugins.version>
     </properties>
 
     <dependencies>
+        <!--Junit-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.8.0</version>
+            <version>${assertj.version}</version>
         </dependency>
     </dependencies>
 
@@ -33,7 +38,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>${plugins.version}</version>
             </plugin>
         </plugins>
     </build>
