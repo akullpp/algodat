@@ -2,6 +2,7 @@ package de.akull.datastructures.trie;
 
 @SuppressWarnings("WeakerAccess")
 public class Trie {
+
     public Node root = new Node();
 
     public void insert(String s) {

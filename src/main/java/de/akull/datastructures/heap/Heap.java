@@ -51,12 +51,16 @@ public class Heap {
     }
 
     public int peek() {
-        if (size == 0) throw new IllegalStateException();
+        if (size == 0) {
+            throw new IllegalStateException();
+        }
         return items[0];
     }
 
     public int poll() {
-        if (size == 0) throw new IllegalStateException();
+        if (size == 0) {
+            throw new IllegalStateException();
+        }
         int first = items[0];
         items[0] = items[--size];
         bubbleDown();

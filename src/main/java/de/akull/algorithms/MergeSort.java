@@ -5,7 +5,9 @@ public class MergeSort {
 
     public static void sort(int[] xs) {
         sort(xs, new int[xs.length], 0, xs.length - 1);
-    };
+    }
+
+    ;
 
     public static void sort(int[] xs, int[] buffer, int low, int high) {
         if (low == high) {

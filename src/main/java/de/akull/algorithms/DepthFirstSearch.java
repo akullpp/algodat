@@ -1,7 +1,6 @@
 package de.akull.algorithms;
 
 import de.akull.datastructures.graph.Node;
-
 import java.util.HashSet;
 
 @SuppressWarnings("WeakerAccess")

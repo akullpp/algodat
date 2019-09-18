@@ -1,11 +1,10 @@
 package de.akull.datastructures.hashtable;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.util.UUID;
-
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import org.junit.Before;
+import org.junit.Test;
 
 public class HashTableTest {
 
