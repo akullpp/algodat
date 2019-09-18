@@ -1,12 +1,11 @@
 package de.akull.datastructures.queue;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import java.util.EmptyStackException;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+import java.util.EmptyStackException;
+import org.junit.Before;
+import org.junit.Test;
 
 public class QueueTest {
 

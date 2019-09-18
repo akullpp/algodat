@@ -1,8 +1,8 @@
 package de.akull.datastructures.dynamicarray;
 
-import org.junit.Test;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+import org.junit.Test;
 
 public class DynamicArrayTest {
 
