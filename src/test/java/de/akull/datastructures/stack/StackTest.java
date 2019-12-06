@@ -4,8 +4,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.EmptyStackException;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 public class StackTest {
 
@@ -14,7 +15,7 @@ public class StackTest {
     private Node n2 = new Node<>(2);
     private Node n3 = new Node<>(3);
 
-    @Before
+    @BeforeEach
     public void init() {
         stack = new Stack();
         stack.push(n1);

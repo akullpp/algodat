@@ -2,30 +2,28 @@ package de.akull.datastructures.linkedlist;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-@SuppressWarnings("Duplicates")
 public class LinkedListTest {
 
-    private LinkedList linkedList;
-    private Node n1 = new Node<>("A");
-    private Node n2 = new Node<>("B");
-    private Node n3 = new Node<>("C");
+    private LinkedList<String> linkedList;
+    private Node<String> n1 = new Node<>("A");
+    private Node<String> n2 = new Node<>("B");
+    private Node<String> n3 = new Node<>("C");
 
-    @Before
+    @BeforeEach
     public void setup() {
-        linkedList = new LinkedList();
+        linkedList = new LinkedList<>();
     }
 
     @Test
-    public void Should_Append() {
-        Node n4 = new Node<>(1);
-        Node n5 = new Node<>(2);
-        Node n6 = new Node<>(3);
+    @DisplayName("Should append new nodes")
+    public void Should_Append_New_Nodes() {
+        Node<String> n4 = new Node<>("D");
+        Node<String> n5 = new Node<>("E");
+        Node<String> n6 = new Node<>("F");
 
         linkedList.append(n1);
         linkedList.append(n2);

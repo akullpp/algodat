@@ -3,14 +3,15 @@ package de.akull.datastructures.hashtable;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.util.UUID;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 public class HashTableTest {
 
     private HashTable<String, Integer> hashTable;
 
-    @Before
+    @BeforeEach
     public void setup() {
         hashTable = new HashTable<>();
     }

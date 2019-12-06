@@ -2,14 +2,15 @@ package de.akull.datastructures.heap;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 public class HeapTest {
 
     private Heap heap;
 
-    @Before
+    @BeforeEach
     public void setup() {
         heap = new Heap();
     }

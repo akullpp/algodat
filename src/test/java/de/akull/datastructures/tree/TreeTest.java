@@ -4,8 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TreeTest {
 
@@ -14,7 +14,7 @@ public class TreeTest {
     // 3   4
     private Node n0;
 
-    @Before
+    @BeforeEach
     public void setup() {
         // Leaf nodes
         Node n2 = new Node();
