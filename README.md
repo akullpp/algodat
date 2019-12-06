@@ -1,6 +1,14 @@
-# Datastructures
+Everything's public access for simpler testing.
 
-Collection of basic datastructures implemented in Java.
+# Algorithms
+
+* Binary Search
+* Breadth First Search
+* Depth First Search
+* Merge sort
+* Quicksort
+
+# Datastructures
 
 * Binary Expression Tree
 * Dynamic array
@@ -12,13 +20,3 @@ Collection of basic datastructures implemented in Java.
 * Stack
 * Tree
 * Trie
-
-Everything's public access for simpler testing.
-
-# Algorithms
-
-* Binary Search
-* Breadth First Search
-* Depth First Search
-* Merge sort
-* Quicksort
