@@ -1,14 +1,12 @@
 package de.akull.datastructures.linkedlist;
 
-@SuppressWarnings("WeakerAccess")
-public class LinkedList {
+public class LinkedList<T> {
 
-    public Node head;
-    public Node tail;
+    public Node<T> head;
+    public Node<T> tail;
     public int size;
 
-    // O(1)
-    public void prepend(Node n) {
+    public void prepend(Node<T> n) {
         n.next = head;
         head = n;
 
@@ -18,8 +16,7 @@ public class LinkedList {
         size++;
     }
 
-    // O(1)
-    public void append(Node n) {
+    public void append(Node<T> n) {
         if (head == null) {
             prepend(n);
         } else {
@@ -29,8 +26,7 @@ public class LinkedList {
         }
     }
 
-    // O(1)
-    public void insertAfter(Node node, Node newNode) {
+    public void insertAfter(Node<T> node, Node<T> newNode) {
         if (node.equals(tail)) {
             tail = newNode;
         }
@@ -39,8 +35,7 @@ public class LinkedList {
         size++;
     }
 
-    // O(1)
-    public void removeAfter(Node n) {
+    public void removeAfter(Node<T> n) {
         if (n.next != null) {
             if (n.next.equals(tail)) {
                 tail = n;
@@ -50,7 +45,6 @@ public class LinkedList {
         }
     }
 
-    // O(1)
     void removeHead() {
         if (head != null) {
             head = head.next;
@@ -62,12 +56,11 @@ public class LinkedList {
         }
     }
 
-    // O(n)
-    public Node get(int index) {
+    public Node<T> get(int index) {
         if (index > size - 1) {
             return null;
         }
-        Node n = head;
+        Node<T> n = head;
 
         while (n.next != null && index > 0) {
             n = n.next;
