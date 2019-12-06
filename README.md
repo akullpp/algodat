@@ -23,3 +23,6 @@ Descriptions taken from [trekhleb/javascript-algorithms](https://github.com/trek
 * Tree
 * Trie
 
+# Notes
+
+The implementation is done with an educational purpose in mind, which means that the datastructures and algorithms do not provide a caller-friendly API, e.g. `LinkedList#append(Node<T> n)` instead of `LinkedList#append(T t)` or use visibility modifiers for access control because readability is key.
