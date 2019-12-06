@@ -1,31 +1,52 @@
 package de.akull.datastructures.linkedlist;
 
+/**
+ * Append
+ * Prepend
+ * Insert after
+ * Insert before
+ * Remove after
+ * Remove before
+ * Remove head
+ * Remove tail
+ * Remove node
+ * Get node at index
+ */
 class LinkedList<T> {
 
     Node<T> head;
     Node<T> tail;
     int size;
 
+    /**
+     * Adds new node at the end of the list.
+     */
+    void append(Node<T> n) {
+        if (head == null) {
+            head = n;
+        } else {
+            tail.next = n;
+        }
+        tail = n;
+        size++;
+    }
+
+    /**
+     * Adds new node at the start of the list.
+     */
     void prepend(Node<T> n) {
         n.next = head;
         head = n;
 
         if (tail == null) {
-            tail = head;
+            tail = n;
         }
         size++;
     }
 
-    void append(Node<T> n) {
-        if (head == null) {
-            prepend(n);
-        } else {
-            tail.next = n;
-            tail = n;
-            size++;
-        }
-    }
-
+    /**
+     * Adds a new node after a specific one.
+     */
     void insertAfter(Node<T> node, Node<T> newNode) {
         if (node.equals(tail)) {
             tail = newNode;
@@ -35,6 +56,14 @@ class LinkedList<T> {
         size++;
     }
 
+    /**
+     * Adds a new node before a specific one.
+     */
+    void insertBefore(Node<T> node, Node<T> newNode) {}
+
+    /**
+     * Deletes node after a specific one.
+     */
     void removeAfter(Node<T> n) {
         if (n.next != null) {
             if (n.next.equals(tail)) {
@@ -45,6 +74,14 @@ class LinkedList<T> {
         }
     }
 
+    /**
+     * Deletes node before a specific one.
+     */
+    void removeBefore(Node<T> n) {}
+
+    /**
+     * Deletes the current head.
+     */
     void removeHead() {
         if (head != null) {
             head = head.next;
@@ -56,6 +93,19 @@ class LinkedList<T> {
         }
     }
 
+    /**
+     * Deletes the current tail.
+     */
+    void removeTail() {}
+
+    /**
+     * Deletes a specific node.
+     */
+    void remove(Node<T> n) {}
+
+    /**
+     * Returns a node at a specific position.
+     */
     Node<T> get(int index) {
         if (index > size - 1) {
             return null;
