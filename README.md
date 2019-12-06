@@ -1,4 +1,6 @@
-Everything's public access for simpler testing.
+# Algorithms and Datastructures
+
+Descriptions taken from [trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms).
 
 # Algorithms
 
@@ -15,8 +17,9 @@ Everything's public access for simpler testing.
 * Graph
 * Hash table
 * Heap
-* Linked list
+* [Linked list](https://github.com/akullpp/algodat/tree/master/src/main/java/de/akull/datastructures/linkedlist)
 * Queue
 * Stack
 * Tree
 * Trie
+
