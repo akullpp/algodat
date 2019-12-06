@@ -4,6 +4,20 @@ In computer science, a linked list is a linear collection of data elements, in w
 
 ![Linked List](https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg)
 
+## Methods
+
+ * Append
+ * Prepend
+ * Insert after
+ * Insert before
+ * Remove after
+ * Remove before
+ * Remove head
+ * Remove tail
+ * Remove node
+ * Get node at index
+
+
 ## Complexities
 
 ### Time Complexity

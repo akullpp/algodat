@@ -1,17 +1,5 @@
 package de.akull.datastructures.linkedlist;
 
-/**
- * Append
- * Prepend
- * Insert after
- * Insert before
- * Remove after
- * Remove before
- * Remove head
- * Remove tail
- * Remove node
- * Get node at index
- */
 class LinkedList<T> {
 
     Node<T> head;
