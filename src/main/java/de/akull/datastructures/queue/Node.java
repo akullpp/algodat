@@ -1,12 +1,12 @@
 package de.akull.datastructures.queue;
 
-@SuppressWarnings("WeakerAccess")
-public class Node<T> {
 
-    public T data;
-    public Node next;
+class Node<T> {
 
-    public Node(T data) {
+    T data;
+    Node next;
+
+    Node(T data) {
         this.data = data;
     }
 }

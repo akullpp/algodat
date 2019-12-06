@@ -1,17 +1,17 @@
 package de.akull.algorithms;
 
-import de.akull.datastructures.graph.Node;
 import java.util.HashSet;
+import java.util.LinkedList;
 
-@SuppressWarnings("WeakerAccess")
-public class DepthFirstSearch {
 
-    public static boolean hasPath(Node source, Node destination) {
+class DepthFirstSearch {
+
+    static boolean hasPath(Node source, Node destination) {
         HashSet<Integer> visited = new HashSet<>();
         return hasPath(source, destination, visited);
     }
 
-    public static boolean hasPath(Node s, Node d, HashSet<Integer> visited) {
+    static boolean hasPath(Node s, Node d, HashSet<Integer> visited) {
         if (visited.contains(s.id)) {
             return false;
         }
@@ -26,5 +26,15 @@ public class DepthFirstSearch {
             }
         }
         return false;
+    }
+
+    static class Node {
+
+        int id;
+        LinkedList<Node> adjacent = new LinkedList<>();
+
+        Node(int id) {
+            this.id = id;
+        }
     }
 }

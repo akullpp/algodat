@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-public class QueueTest {
+class QueueTest {
 
     private Queue queue;
     private Node n1 = new Node<>(1);
@@ -16,7 +16,7 @@ public class QueueTest {
     private Node n3 = new Node<>(3);
 
     @BeforeEach
-    public void init() {
+    void init() {
         queue = new Queue();
         queue.add(n1);
         queue.add(n2);
@@ -24,7 +24,7 @@ public class QueueTest {
     }
 
     @Test
-    public void Should_Remove_All_Nodes() {
+    void Should_Remove_All_Nodes() {
         assertThat(queue.isEmpty()).isFalse();
 
         queue.remove();
@@ -36,7 +36,7 @@ public class QueueTest {
     }
 
     @Test
-    public void Should_Throw_When_No_Nodes_And_Remove_Is_Called() {
+    void Should_Throw_When_No_Nodes_And_Remove_Is_Called() {
         queue.remove();
         queue.remove();
         queue.remove();
@@ -45,7 +45,7 @@ public class QueueTest {
     }
 
     @Test
-    public void Should_Retrieve_Head_Without_Removing() {
+    void Should_Retrieve_Head_Without_Removing() {
         assertThat(queue.peek()).isEqualTo(n1);
         assertThat(queue.head).isEqualTo(n1);
     }

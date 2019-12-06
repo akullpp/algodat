@@ -1,15 +1,15 @@
 package de.akull.datastructures.hashtable;
 
-@SuppressWarnings("WeakerAccess")
-public class Node<K, V> {
 
-    public Node<K, V> next;
+class Node<K, V> {
 
-    public K key;
+    Node<K, V> next;
 
-    public V value;
+    K key;
 
-    public Node(K key, V value) {
+    V value;
+
+    Node(K key, V value) {
         this.key = key;
         this.value = value;
     }

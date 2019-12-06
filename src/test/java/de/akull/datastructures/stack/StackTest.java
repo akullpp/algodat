@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-public class StackTest {
+class StackTest {
 
     private Stack stack;
     private Node n1 = new Node<>(1);
@@ -16,7 +16,7 @@ public class StackTest {
     private Node n3 = new Node<>(3);
 
     @BeforeEach
-    public void init() {
+    void init() {
         stack = new Stack();
         stack.push(n1);
         stack.push(n2);
@@ -24,7 +24,7 @@ public class StackTest {
     }
 
     @Test
-    public void Should_Remove_All_Nodes() {
+    void Should_Remove_All_Nodes() {
         assertThat(stack.isEmpty()).isFalse();
 
         stack.pop();
@@ -35,7 +35,7 @@ public class StackTest {
     }
 
     @Test
-    public void Should_Throw_When_No_Nodes_And_Remove_Is_Called() {
+    void Should_Throw_When_No_Nodes_And_Remove_Is_Called() {
         stack.pop();
         stack.pop();
         stack.pop();
@@ -44,7 +44,7 @@ public class StackTest {
     }
 
     @Test
-    public void Should_Retrieve_Head_Without_Removing() {
+    void Should_Retrieve_Head_Without_Removing() {
         assertThat(stack.peek()).isEqualTo(n3);
         assertThat(stack.head).isEqualTo(n3);
     }

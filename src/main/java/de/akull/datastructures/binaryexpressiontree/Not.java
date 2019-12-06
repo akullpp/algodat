@@ -2,16 +2,16 @@ package de.akull.datastructures.binaryexpressiontree;
 
 import java.util.HashMap;
 
-@SuppressWarnings("WeakerAccess")
-public class Not implements Node {
 
-    public Node node;
+class Not extends Node {
 
-    public Not(Node node) {
+    Node node;
+
+    Not(Node node) {
         this.node = node;
     }
 
-    public boolean eval(HashMap<String, String> p) {
+    boolean eval(HashMap<String, String> p) {
         return !node.eval(p);
     }
 }

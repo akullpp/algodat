@@ -3,16 +3,16 @@ package de.akull.datastructures.hashtable;
 @SuppressWarnings({"WeakerAccess", "unchecked"})
 class HashTable<K, V> {
 
-    public static final int INCREASE_FACTOR = 2;
-    public static final int HASH_FACTOR = 31;
-    public static final double LOAD_FACTOR = 0.75;
+    static final int INCREASE_FACTOR = 2;
+    static final int HASH_FACTOR = 31;
+    static final double LOAD_FACTOR = 0.75;
 
-    public int capacity = 10;
+    int capacity = 10;
 
-    public int size = 0;
-    public LinkedList<K, V>[] buckets = new LinkedList[capacity];
+    int size = 0;
+    LinkedList<K, V>[] buckets = new LinkedList[capacity];
 
-    public int hash(String key) {
+    int hash(String key) {
         int hash = 0;
         // O(N)
         char[] chars = key.toCharArray();
@@ -24,7 +24,7 @@ class HashTable<K, V> {
         return hash;
     }
 
-    public void ensureCapacity() {
+    void ensureCapacity() {
         if (size >= Math.floor(capacity * LOAD_FACTOR)) {
             size = 0;
             LinkedList<K, V>[] tmp = buckets;
@@ -42,12 +42,12 @@ class HashTable<K, V> {
         }
     }
 
-    public int computeIndex(K key) {
+    int computeIndex(K key) {
         return Math.abs(hash(key.toString()) % buckets.length);
     }
 
     // O(1)
-    public void put(K key, V value) {
+    void put(K key, V value) {
         ensureCapacity();
 
         int index = computeIndex(key);
@@ -58,7 +58,7 @@ class HashTable<K, V> {
         size++;
     }
 
-    public V get(K key) {
+    V get(K key) {
         int index = computeIndex(key);
 
         Node<K, V> current = buckets[index].head;

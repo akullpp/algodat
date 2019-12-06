@@ -1,11 +1,11 @@
 package de.akull.datastructures.trie;
 
-@SuppressWarnings("WeakerAccess")
-public class Trie {
 
-    public Node root = new Node();
+class Trie {
 
-    public void insert(String s) {
+    Node root = new Node();
+
+    void insert(String s) {
         Node current = root;
         for (char c : s.toCharArray()) {
             current.children.putIfAbsent(c, new Node());
@@ -14,7 +14,7 @@ public class Trie {
         current.isWord = true;
     }
 
-    public boolean isWord(String s) {
+    boolean isWord(String s) {
         Node current = root;
 
         for (char c : s.toCharArray()) {

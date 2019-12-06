@@ -2,8 +2,8 @@ package de.akull.datastructures.tree;
 
 import java.util.List;
 
-@SuppressWarnings("WeakerAccess")
-public class Tree {
+
+class Tree {
 
     static void traverseInOrder(Node n, List<Object> acc) {
         if (n != null) {

@@ -1,15 +1,15 @@
 package de.akull.algorithms;
 
-@SuppressWarnings("WeakerAccess")
-public class MergeSort {
 
-    public static void sort(int[] xs) {
+class MergeSort {
+
+    static void sort(int[] xs) {
         sort(xs, new int[xs.length], 0, xs.length - 1);
     }
 
     ;
 
-    public static void sort(int[] xs, int[] buffer, int low, int high) {
+    static void sort(int[] xs, int[] buffer, int low, int high) {
         if (low == high) {
             return;
         }
@@ -19,7 +19,7 @@ public class MergeSort {
         merge(xs, buffer, low, mid, high);
     }
 
-    public static void merge(int[] xs, int[] buffer, int low, int mid, int high) {
+    static void merge(int[] xs, int[] buffer, int low, int mid, int high) {
         System.arraycopy(xs, low, buffer, low, high + 1 - low);
 
         int i = low;

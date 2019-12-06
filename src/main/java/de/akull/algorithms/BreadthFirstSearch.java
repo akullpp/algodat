@@ -1,13 +1,12 @@
 package de.akull.algorithms;
 
-import de.akull.datastructures.graph.Node;
 import java.util.HashSet;
 import java.util.LinkedList;
 
-@SuppressWarnings("WeakerAccess")
-public class BreadthFirstSearch {
 
-    public static boolean hasPath(Node source, Node destination) {
+class BreadthFirstSearch {
+
+    static boolean hasPath(Node source, Node destination) {
         LinkedList<Node> nextToVisit = new LinkedList<>();
         HashSet<Integer> visited = new HashSet<>();
         nextToVisit.add(source);
@@ -25,5 +24,15 @@ public class BreadthFirstSearch {
             nextToVisit.addAll(n.adjacent);
         }
         return false;
+    }
+
+    static class Node {
+
+        int id;
+        LinkedList<Node> adjacent = new LinkedList<>();
+
+        Node(int id) {
+            this.id = id;
+        }
     }
 }

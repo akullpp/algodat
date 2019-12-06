@@ -7,17 +7,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-public class HashTableTest {
+class HashTableTest {
 
     private HashTable<String, Integer> hashTable;
 
     @BeforeEach
-    public void setup() {
+    void setup() {
         hashTable = new HashTable<>();
     }
 
     @Test
-    public void Should_Retrieve_Stored_Values() {
+    void Should_Retrieve_Stored_Values() {
         hashTable.put("A", 1);
         hashTable.put("B", 2);
         hashTable.put("C", 3);
@@ -29,7 +29,7 @@ public class HashTableTest {
     }
 
     @Test
-    public void Should_Resize() {
+    void Should_Resize() {
         hashTable.put("A", 1);
         hashTable.put("B", 2);
         hashTable.put("C", 3);
@@ -47,7 +47,7 @@ public class HashTableTest {
     }
 
     @Test
-    public void Should_Work_With_Collisions() {
+    void Should_Work_With_Collisions() {
         hashTable.put("Teheran", 1);
         hashTable.put("Siblings", 2);
 
@@ -57,7 +57,7 @@ public class HashTableTest {
     }
 
     @Test
-    public void Should_Compute_Indices_In_Range() {
+    void Should_Compute_Indices_In_Range() {
         for (int i = 0; i < 100; i++) {
             assertThat(hashTable.computeIndex(UUID.randomUUID().toString())).isBetween(0, hashTable.capacity);
         }

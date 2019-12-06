@@ -2,62 +2,62 @@ package de.akull.datastructures.heap;
 
 import java.util.Arrays;
 
-@SuppressWarnings("WeakerAccess")
-public class Heap {
 
-    public int capacity = 10;
-    public int size = 0;
-    public int[] items = new int[capacity];
+class Heap {
 
-    public boolean hasLeftChild(int i) {
+    int capacity = 10;
+    int size = 0;
+    int[] items = new int[capacity];
+
+    boolean hasLeftChild(int i) {
         return getLeftChildIndex(i) < size;
     }
 
-    public int getLeftChildIndex(int i) {
+    int getLeftChildIndex(int i) {
         return 2 * i + 1;
     }
 
-    public int getLeftChild(int i) {
+    int getLeftChild(int i) {
         return items[getLeftChildIndex(i)];
     }
 
-    public boolean hasRightChild(int i) {
+    boolean hasRightChild(int i) {
         return getRightChildIndex(i) < size;
     }
 
-    public int getRightChildIndex(int i) {
+    int getRightChildIndex(int i) {
         return 2 * i + 2;
     }
 
-    public int getRightChild(int i) {
+    int getRightChild(int i) {
         return items[getRightChildIndex(i)];
     }
 
-    public int getParentIndex(int i) {
+    int getParentIndex(int i) {
         return (i - 1) / 2;
     }
 
-    public void swap(int i, int j) {
+    void swap(int i, int j) {
         int tmp = items[i];
         items[i] = items[j];
         items[j] = tmp;
     }
 
-    public void checkCapacity() {
+    void checkCapacity() {
         if (size == capacity) {
             capacity *= 2;
             items = Arrays.copyOf(items, capacity);
         }
     }
 
-    public int peek() {
+    int peek() {
         if (size == 0) {
             throw new IllegalStateException();
         }
         return items[0];
     }
 
-    public int poll() {
+    int poll() {
         if (size == 0) {
             throw new IllegalStateException();
         }
@@ -67,13 +67,13 @@ public class Heap {
         return first;
     }
 
-    public void add(int item) {
+    void add(int item) {
         checkCapacity();
         items[size++] = item;
         bubbleUp();
     }
 
-    public void bubbleUp() {
+    void bubbleUp() {
         int i = size - 1;
 
         int parentIndex = getParentIndex(i);
@@ -83,7 +83,7 @@ public class Heap {
         }
     }
 
-    public void bubbleDown() {
+    void bubbleDown() {
         int i = 0;
 
         while (hasLeftChild(i)) {

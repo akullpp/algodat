@@ -2,16 +2,16 @@ package de.akull.datastructures.dynamicarray;
 
 import java.util.Arrays;
 
-@SuppressWarnings("WeakerAccess")
-public class DynamicArray<T> {
 
-    public static final int INCREASE_FACTOR = 2;
+class DynamicArray<T> {
 
-    public int capacity = 3;
-    public int size = 0;
-    public Object[] array = new Object[capacity];
+    static final int INCREASE_FACTOR = 2;
 
-    public void add(T t) {
+    int capacity = 3;
+    int size = 0;
+    Object[] array = new Object[capacity];
+
+    void add(T t) {
         if (size == capacity) {
             array = Arrays.copyOf(array, capacity *= INCREASE_FACTOR);
         }

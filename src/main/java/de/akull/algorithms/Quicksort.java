@@ -1,13 +1,13 @@
 package de.akull.algorithms;
 
-@SuppressWarnings("WeakerAccess")
-public class Quicksort {
 
-    public static void quicksort(int[] xs) {
+class Quicksort {
+
+    static void quicksort(int[] xs) {
         quicksort(xs, 0, xs.length - 1);
     }
 
-    public static void quicksort(int[] xs, int left, int right) {
+    static void quicksort(int[] xs, int left, int right) {
         if (left >= right) {
             return;
         }
@@ -17,7 +17,7 @@ public class Quicksort {
         quicksort(xs, index, right);
     }
 
-    public static int partition(int[] xs, int left, int right, int pivot) {
+    static int partition(int[] xs, int left, int right, int pivot) {
         while (left <= right) {
             while (xs[left] < pivot) {
                 left++;

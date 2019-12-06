@@ -2,9 +2,9 @@ package de.akull.algorithms;
 
 import java.util.Arrays;
 
-public class BinarySearch {
+class BinarySearch {
 
-    public static int search(int[] xs, int x) {
+    static int search(int[] xs, int x) {
         int pivot = xs.length / 2;
 
         if (x == xs[pivot]) {

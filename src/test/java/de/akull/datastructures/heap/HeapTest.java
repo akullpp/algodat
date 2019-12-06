@@ -6,17 +6,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-public class HeapTest {
+class HeapTest {
 
     private Heap heap;
 
     @BeforeEach
-    public void setup() {
+    void setup() {
         heap = new Heap();
     }
 
     @Test
-    public void Should_Add_Items() {
+    void Should_Add_Items() {
         heap.add(1);
         heap.add(2);
         heap.add(3);
@@ -26,7 +26,7 @@ public class HeapTest {
     }
 
     @Test
-    public void Should_Have_The_Minimum_Value_As_Root() {
+    void Should_Have_The_Minimum_Value_As_Root() {
         heap.add(10);
         heap.add(1);
         heap.add(5);
@@ -35,7 +35,7 @@ public class HeapTest {
     }
 
     @Test
-    public void Should_Retrieve_Root_Without_Removing() {
+    void Should_Retrieve_Root_Without_Removing() {
         heap.add(1);
         heap.add(2);
         heap.add(3);
@@ -45,7 +45,7 @@ public class HeapTest {
     }
 
     @Test
-    public void Should_Remove_Root_With_Reordering() {
+    void Should_Remove_Root_With_Reordering() {
         heap.add(10);
         heap.add(1);
         heap.add(5);
@@ -55,7 +55,7 @@ public class HeapTest {
     }
 
     @Test
-    public void Should_Remove_Every_Node() {
+    void Should_Remove_Every_Node() {
         heap.add(1);
         heap.add(2);
         heap.add(3);

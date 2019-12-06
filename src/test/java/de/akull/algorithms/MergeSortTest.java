@@ -5,10 +5,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
 
-public class MergeSortTest {
+class MergeSortTest {
 
     @Test
-    public void Should_Sort_Ascending() {
+    void Should_Sort_Ascending() {
         int[] xs = new int[]{15, 3, 2, 1, 9, 5, 7, 8, 6};
 
         MergeSort.sort(xs);

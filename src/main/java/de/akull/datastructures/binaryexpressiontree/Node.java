@@ -2,7 +2,7 @@ package de.akull.datastructures.binaryexpressiontree;
 
 import java.util.HashMap;
 
-public interface Node {
+abstract class Node {
 
-    boolean eval(HashMap<String, String> p);
+    abstract boolean eval(HashMap<String, String> p);
 }

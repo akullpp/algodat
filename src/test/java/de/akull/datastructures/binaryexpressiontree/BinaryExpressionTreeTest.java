@@ -6,10 +6,10 @@ import java.util.HashMap;
 import org.junit.jupiter.api.Test;
 
 
-public class BinaryExpressionTreeTest {
+class BinaryExpressionTreeTest {
 
     @Test
-    public void Should_Evaluate_Conjunctions() {
+    void Should_Evaluate_Conjunctions() {
         Node conjunction = new And(new Equal("a", "1"), new Equal("b", "2"));
         HashMap<String, String> data = new HashMap<>();
         data.put("a", "1");
@@ -21,7 +21,7 @@ public class BinaryExpressionTreeTest {
     }
 
     @Test
-    public void Should_Evaluate_Invalid_Conjunctions_As_False() {
+    void Should_Evaluate_Invalid_Conjunctions_As_False() {
         Node conjunction = new And(new Equal("a", "1"), new Equal("b", "2"));
         HashMap<String, String> data = new HashMap<>();
         data.put("a", "2");
@@ -33,7 +33,7 @@ public class BinaryExpressionTreeTest {
     }
 
     @Test
-    public void Should_Evaluate_Disjunctions() {
+    void Should_Evaluate_Disjunctions() {
         Node disjunction = new Or(new Equal("a", "1"), new Equal("b", "2"));
         HashMap<String, String> data = new HashMap<>();
         data.put("a", "1");
@@ -45,7 +45,7 @@ public class BinaryExpressionTreeTest {
     }
 
     @Test
-    public void Should_Evaluate_Invalid_Disjunctions_As_False() {
+    void Should_Evaluate_Invalid_Disjunctions_As_False() {
         Node disjunction = new Or(new Equal("a", "1"), new Equal("b", "2"));
         HashMap<String, String> data = new HashMap<>();
         data.put("a", "2");
@@ -57,7 +57,7 @@ public class BinaryExpressionTreeTest {
     }
 
     @Test
-    public void Should_Evaluate_Equal() {
+    void Should_Evaluate_Equal() {
         Node equal = new Equal("a", "1");
         HashMap<String, String> data = new HashMap<>();
         data.put("a", "1");
@@ -68,7 +68,7 @@ public class BinaryExpressionTreeTest {
     }
 
     @Test
-    public void Should_Evaluate_Non_Matching_Equal_As_False() {
+    void Should_Evaluate_Non_Matching_Equal_As_False() {
         Node equal = new Equal("a", "1");
         HashMap<String, String> data = new HashMap<>();
         data.put("a", "2");
@@ -79,7 +79,7 @@ public class BinaryExpressionTreeTest {
     }
 
     @Test
-    public void Should_Evaluate_Not() {
+    void Should_Evaluate_Not() {
         Node equal = new Not(new Equal("a", "1"));
         HashMap<String, String> data = new HashMap<>();
         data.put("a", "2");
@@ -90,7 +90,7 @@ public class BinaryExpressionTreeTest {
     }
 
     @Test
-    public void Should_Evaluate_Non_Matching_Not_As_False() {
+    void Should_Evaluate_Non_Matching_Not_As_False() {
         Node equal = new Not(new Equal("a", "1"));
         HashMap<String, String> data = new HashMap<>();
         data.put("a", "1");

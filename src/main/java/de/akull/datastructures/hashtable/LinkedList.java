@@ -1,14 +1,14 @@
 package de.akull.datastructures.hashtable;
 
-@SuppressWarnings("WeakerAccess")
+
 class LinkedList<K, V> {
 
-    public Node<K, V> head;
+    Node<K, V> head;
 
-    public Node<K, V> tail;
+    Node<K, V> tail;
 
     // O(1)
-    public void prepend(Node<K, V> n) {
+    void prepend(Node<K, V> n) {
         n.next = head;
         head = n;
 
@@ -18,7 +18,7 @@ class LinkedList<K, V> {
     }
 
     // O(1)
-    public void append(Node<K, V> n) {
+    void append(Node<K, V> n) {
         if (head == null) {
             prepend(n);
         } else {

@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class TreeTest {
+class TreeTest {
 
     //       0
     //   1       2
@@ -15,7 +15,7 @@ public class TreeTest {
     private Node n0;
 
     @BeforeEach
-    public void setup() {
+    void setup() {
         // Leaf nodes
         Node n2 = new Node();
         n2.data = "2";
@@ -36,7 +36,7 @@ public class TreeTest {
     }
 
     @Test
-    public void Should_Traverse_In_Order() {
+    void Should_Traverse_In_Order() {
         List<Object> acc = new ArrayList<>();
 
         Tree.traverseInOrder(n0, acc);
@@ -45,7 +45,7 @@ public class TreeTest {
     }
 
     @Test
-    public void Should_Traverse_Pre_Order() {
+    void Should_Traverse_Pre_Order() {
         List<Object> acc = new ArrayList<>();
 
         Tree.traversePreOrder(n0, acc);
@@ -54,7 +54,7 @@ public class TreeTest {
     }
 
     @Test
-    public void Should_Traverse_Post_Order() {
+    void Should_Traverse_Post_Order() {
         List<Object> acc = new ArrayList<>();
 
         Tree.traversePostOrder(n0, acc);

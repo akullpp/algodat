@@ -5,10 +5,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
 
-public class TrieTest {
+class TrieTest {
 
     @Test
-    public void Should_Find_Stored_Words() {
+    void Should_Find_Stored_Words() {
         Trie trie = new Trie();
         trie.insert("Hello");
         trie.insert("Hell");

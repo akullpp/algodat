@@ -6,21 +6,21 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class LinkedListTest {
+class LinkedListTest {
 
-    private LinkedList<String> linkedList;
-    private Node<String> n1 = new Node<>("A");
-    private Node<String> n2 = new Node<>("B");
-    private Node<String> n3 = new Node<>("C");
+    LinkedList<String> linkedList;
+    Node<String> n1 = new Node<>("A");
+    Node<String> n2 = new Node<>("B");
+    Node<String> n3 = new Node<>("C");
 
     @BeforeEach
-    public void setup() {
+    void setup() {
         linkedList = new LinkedList<>();
     }
 
     @Test
     @DisplayName("Should append new nodes")
-    public void Should_Append_New_Nodes() {
+    void Should_Append_New_Nodes() {
         Node<String> n4 = new Node<>("D");
         Node<String> n5 = new Node<>("E");
         Node<String> n6 = new Node<>("F");
@@ -45,7 +45,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Should_Prepend_Whithout_Existing_Nodes() {
+    void Should_Prepend_Whithout_Existing_Nodes() {
         linkedList.prepend(n1);
         linkedList.append(n2);
         linkedList.append(n3);
@@ -60,7 +60,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Should_Prepend_With_Existing_Nodes() {
+    void Should_Prepend_With_Existing_Nodes() {
         linkedList.append(n2);
         linkedList.append(n3);
         linkedList.prepend(n1);
@@ -75,7 +75,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Should_Get_Node_From_Index() {
+    void Should_Get_Node_From_Index() {
         linkedList.append(n1);
         linkedList.append(n2);
         linkedList.append(n3);
@@ -86,7 +86,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Should_Insert_After_Head() {
+    void Should_Insert_After_Head() {
         linkedList.append(n1);
         linkedList.append(n3);
         linkedList.insertAfter(n1, n2);
@@ -101,7 +101,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Should_Insert_After_Tail() {
+    void Should_Insert_After_Tail() {
         linkedList.append(n1);
         linkedList.append(n2);
         linkedList.insertAfter(n2, n3);
@@ -116,7 +116,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Should_Insert_After_Inbetween() {
+    void Should_Insert_After_Inbetween() {
         Node n4 = new Node<>("D");
 
         linkedList.append(n1);
@@ -135,7 +135,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Should_Remove_Head() {
+    void Should_Remove_Head() {
         linkedList.append(n1);
         linkedList.append(n2);
         linkedList.append(n3);
@@ -157,7 +157,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Should_Remove_After() {
+    void Should_Remove_After() {
         linkedList.append(n1);
         linkedList.append(n2);
         linkedList.append(n3);

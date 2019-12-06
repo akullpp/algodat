@@ -2,13 +2,13 @@ package de.akull.datastructures.queue;
 
 import java.util.EmptyStackException;
 
-@SuppressWarnings("WeakerAccess")
-public class Queue {
 
-    public Node head;
-    public Node tail;
+class Queue {
 
-    public void add(Node n) {
+    Node head;
+    Node tail;
+
+    void add(Node n) {
         if (tail != null) {
             tail.next = n;
         }
@@ -18,7 +18,7 @@ public class Queue {
         }
     }
 
-    public Node remove() {
+    Node remove() {
         if (head == null) {
             throw new EmptyStackException();
         }
@@ -31,11 +31,11 @@ public class Queue {
         return n;
     }
 
-    public Node peek() {
+    Node peek() {
         return head;
     }
 
-    public boolean isEmpty() {
+    boolean isEmpty() {
         return tail == null;
     }
 }

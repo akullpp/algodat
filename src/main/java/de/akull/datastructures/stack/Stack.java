@@ -2,17 +2,17 @@ package de.akull.datastructures.stack;
 
 import java.util.EmptyStackException;
 
-@SuppressWarnings("WeakerAccess")
-public class Stack {
 
-    public Node head;
+class Stack {
 
-    public void push(Node n) {
+    Node head;
+
+    void push(Node n) {
         n.next = head;
         head = n;
     }
 
-    public Node pop() {
+    Node pop() {
         if (head == null) {
             throw new EmptyStackException();
         }
@@ -21,11 +21,11 @@ public class Stack {
         return n;
     }
 
-    public Node peek() {
+    Node peek() {
         return head;
     }
 
-    public boolean isEmpty() {
+    boolean isEmpty() {
         return head == null;
     }
 }

@@ -5,10 +5,10 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.Test;
 
 
-public class DynamicArrayTest {
+class DynamicArrayTest {
 
     @Test
-    public void Should_Store_Items() throws Exception {
+    void Should_Store_Items() throws Exception {
         DynamicArray<Integer> dynamicArray = new DynamicArray<>();
 
         dynamicArray.add(1);
@@ -21,7 +21,7 @@ public class DynamicArrayTest {
     }
 
     @Test
-    public void Should_Resize() throws Exception {
+    void Should_Resize() throws Exception {
         DynamicArray<Integer> dynamicArray = new DynamicArray<>();
 
         dynamicArray.add(1);
