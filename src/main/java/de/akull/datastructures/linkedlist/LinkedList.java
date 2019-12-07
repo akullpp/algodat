@@ -47,7 +47,7 @@ class LinkedList<T> {
     /**
      * Adds a new node before a specific one.
      */
-    void insertBefore(Node<T> node, Node<T> newNode) {}
+    void insertBefore(Node<T> node,  Node<T> newNode) {}
 
     /**
      * Deletes node after a specific one.
