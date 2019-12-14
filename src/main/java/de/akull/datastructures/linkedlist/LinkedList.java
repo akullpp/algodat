@@ -35,7 +35,7 @@ class LinkedList<T> {
     /**
      * Adds a new node after a specific one.
      */
-    void insertAfter(Node<T> node, Node<T> newNode) {
+    void insertAfter(Node<T> newNode, Node<T> node) {
         if (node.equals(tail)) {
             tail = newNode;
         }
@@ -47,7 +47,24 @@ class LinkedList<T> {
     /**
      * Adds a new node before a specific one.
      */
-    void insertBefore(Node<T> node,  Node<T> newNode) {}
+    void insertBefore(Node<T> newNode, Node<T> node) {
+        if (head.equals(node)) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node<T> n = head;
+
+            while (n.next != null) {
+                if (node.equals(n.next)) {
+                    newNode.next = n.next;
+                    n.next = newNode;
+                    break;
+                }
+                n = n.next;
+            }
+        }
+        size++;
+    }
 
     /**
      * Deletes node after a specific one.
