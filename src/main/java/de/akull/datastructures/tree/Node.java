@@ -1,9 +1,6 @@
-package de.akull.datastructures.tree;
+class Node {
 
-
-class Node<T> {
-
-    T data;
+    int data;
     Node left;
     Node right;
 }
